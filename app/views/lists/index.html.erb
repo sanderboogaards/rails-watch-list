@@ -1,3 +1,4 @@
+<body style="background-color: #F8F9FA">
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/sanderboogaards/image/upload/v1629454328/pexels-donald-tong-109669_rgnlni.jpg);">
   <div class="container">
     <h1>Save all your favorite movies</h1>
@@ -6,11 +7,14 @@
 </div>
 
 <br>
-
-<div class="cards">
-  <% @lists.each do |list| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 200, crop: :fill %>')">
-      <%= link_to "#{list.name}", list_path(list) %>
-    </div>
-  <% end %>
+<div class="container">
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('<%= cl_image_path list.photo.key, height: 200, crop: :fill %>')">
+        <%= "#{list.name}"%>
+        <a href="/lists/<%= "#{list.id}"%>" class="stretched-link"></a>
+      </div>
+    <% end %>
+  </div>
 </div>
+</body>
