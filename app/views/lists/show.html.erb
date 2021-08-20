@@ -5,6 +5,8 @@
   <p>Title: <%= bookmark.movie.title %></p>
   <p>Comment: <%= bookmark.comment %></p>
   <img src="<%= bookmark.movie.poster_url %>" alt="movie poster" style="width:200px;height:300px;">
+  <%= link_to "Delete bookmark", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %>
+
 <% end %>
 <br>
 <br>
