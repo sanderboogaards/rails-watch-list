@@ -1,5 +1,5 @@
+<%= cl_image_tag @list.photo.key, height: 300, width: 1200, crop: :fill %>
 <h1> <%= @list.name %> </h1>
-
 <br>
 <% @list.bookmarks.each do |bookmark| %>
   <p>Title: <%= bookmark.movie.title %></p>
